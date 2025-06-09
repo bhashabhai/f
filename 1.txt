@@ -1,0 +1,34 @@
+<html>
+<body>
+<form name="f" onsubmit="return v()">
+  Name: <input name="n"><br>
+  Address: <input name="a"><br>
+  Email: <input name="e"><br>
+  Password: <input name="p"><br>
+  Phone: <input name="t"><br>
+  Course:
+  <select name="s">
+    <option value="">Select</option>
+    <option>BTECH</option>
+    <option>BBA</option>
+    <option>BCA</option>
+    <option>BCOM</option>
+  </select><br>
+  <input type="submit">
+</form>
+
+<script>
+function v() {
+  let f = document.f;
+  if (!f.n.value || !f.a.value || !f.e.value || !f.p.value || !f.t.value || !f.s.value) {
+    alert("All fields required");
+    return false;
+  }
+  if (f.e.value.indexOf("@") == -1 || f.e.value.indexOf(".") == -1) {
+    alert("Invalid email");
+    return false;
+  }
+}
+</script>
+</body>
+</html>
