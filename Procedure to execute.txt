@@ -1,0 +1,103 @@
+Ex_1\ex1.html
+
+COMMAND:
+	node -v
+        sudo apt install nodejs
+        winget install Schniz.fnm
+        Y
+        npx http-server
+ or
+npm install -g http-server
+
+Ex_2\ex2.html
+	\user.json  [we have to provide data]
+
+COMMAND:
+	npm init -y
+        npm install express
+        npx http-server
+			
+Ex_3\PUBLIC\ex3.html
+	\ex3_server.js
+
+COMMAND:
+	npm init-y
+	public
+  	  -html
+  	  -css
+	node ex3server.js
+
+
+Ex_4\PUBLIC\ex4.html
+	\ex4server.js
+	\data.json  [the provided data in the 
+browser will be displayed in a data.json]
+
+COMMAND:
+	npm init-y
+	npm install express
+	node ex4server.js
+	
+
+Ex_5\PUBLIC\ex5.html  
+	\ex5server.js
+	\.env
+
+COMMAND:
+	npm init-y
+	npm install express mongoose body-parser cors dotenv 
+	node ex5server.js
+
+
+Ex_6\PUBLIC\ex6.html
+	\ex6server.js
+	\.env
+
+COMMAND:
+	npm init-y
+	npm install express mysql2 cors dotenv
+	node ex6server.js
+ex_7\src\app.js
+	
+COMMAND:
+	npx create-react-app ex_7[folder name]
+	cd ex_7
+	npm start
+
+
+Ex_8\src\app.js
+	\backend\server.js
+	
+COMMAND:
+Terminal1
+	npx create-react-app ex_8[folder name]
+        src
+         -app.js(paste code)
+        npm start
+Terminal2:Open the terminal of backend folder	
+	md backend(server.js(paste code))
+        cd backend
+        npm install express fs body-parse cors
+	node server.js
+
+Ex_9
+`	mkdir auth-app 
+	cd auth-app 
+	npm init -y 	
+        npm install express mongoose bcryptjs cookie-parser jsonwebtoken
+        
+        server.js: 
+	models/User.js: 
+	routes/auth.js: 
+
+        http://localhost:5000/api/auth/signup
+        json 
+	{
+ 		"username": "James", 
+		"password": "password123"
+	}
+        http://localhost:5000/api/auth/login
+        {
+ 		"username": "James", 
+		"password": "password123"
+	}
