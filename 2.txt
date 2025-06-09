@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+</head>
+<body>
+  <h3>Employees</h3>
+  <div id="c"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+fetch("https://raw.githubusercontent.com/bhashabhai/FSWD/main/users.json")
+  .then(r => r.json())
+  .then(d => {
+    let x = "";
+    d.forEach(e => {
+      x += `<div>
+        <b>${e.Name}</b><br>
+        Office: ${e.Office}<br>
+        Position: ${e.Position}<br>
+        Salary: ${e.Salary}
+        <hr>
+      </div>`;
+    });
+    document.getElementById("c").innerHTML = x;
+  });
