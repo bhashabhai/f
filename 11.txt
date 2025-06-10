@@ -1,32 +1,38 @@
-const http = require('http');
-const hostname = '0.0.0.0';
-const port = 8080;
+    const http = require('http');
+    const port = 3000;
 
-const server = http.createServer((req, res) => {
-  if (req.method === 'GET' && req.url === '/ping') {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ message: 'pong' }));
-  } else {
-    res.statusCode = 404;
-    res.end('Not Found');
-  }
-});
+    const server = http.createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('ping\n');
+    });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+    server.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
 
 
 
 Docker:
 
-FROM node:16
+# Use the official Node.js image
+FROM node:18
 
-WORKDIR /usr/src/app
+# Create app directory
+WORKDIR /app
 
-COPY server.js .
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
 
-EXPOSE 8080
+# Copy the rest of the app code
+COPY . .
 
+# Expose the port
+EXPOSE 3000
+
+# Start the server
 CMD ["node", "server.js"]
+
+
+//to run
+//docker run -d -p 3000:3000 ping-server
