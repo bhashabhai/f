@@ -36,5 +36,5 @@ CMD ["node", "server.js"]
 //install docker in terminal
 docker build -t ping-server
 //to run
-//docker run -d -p 3000:3000 ping-server
+//docker docker run -d -p 3000:3000 ping-server
 
