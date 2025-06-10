@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React,{useState} from 'react';
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCount(c => {
-        if (c >= 1000) {
-          clearInterval(timer);
-          return c;
-        }
-        return c + 1;
-      });
-    }, 1);
-
-    return () => clearInterval(timer);
-  }, []);
-
+function App(){
+  const[count,setCount] = useState(0);
+  
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>Fullstack</h1>
-      <p>COUNTS</p>
-      <div id="counter">{count}</div>
+    <div style ={{textAlign:'center',marginTop:'50px'}}>
+      <h1>Counter:{count}</h1>
+      <button onClick={()=> setCount(count + 1)}>Increment</button>
+      <button onClick={()=> setCount(count - 1)}>Decrement</button>
+      <button onClikck={()=>setCount(0)}>Reset</button>
     </div>
   );
 }
